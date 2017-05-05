@@ -76,7 +76,7 @@ int i = db.update("animals",values,"_id =
   zwierz.setId(Integer.parseInt(cursor.getString(0 )) ) ;
   return zwierz;
   }
-
+//
 public Cursor lista(){
 SQLiteDatabase db =  this.getReadableDatabase();
 return db.rawQuery("Select * from animals",null);
