@@ -38,15 +38,14 @@ db.insert("animals", null,values);
 db.close();
 }
 
-public void
-usun(String id) {
+public void usun(String id) {
 SQLiteDatabase db = this.getWritableDatabase();
 db.delete("animals", "_id = ?",
 newString[] {id});
 db.close();
 }
 
-public intaktualizuj(Animal zwierz) {
+public int aktualizuj(Animal zwierz) {
 SQLiteDatabase db =this.getWritableDatabase();
 ContentValues values =new ContentValues();
 values.put("gatunek",zwierz.getGatunek());
@@ -82,6 +81,13 @@ public Cursor lista(){
 SQLiteDatabase db =  this.getReadableDatabase();
 return db.rawQuery("Select * from animals",null);
 }
+
+this.adapter =
+new SimpleCursorAdapter(
+this,android.R.layout.simple_list_item_2, db.lista(),
+new String[] {"_id","gatunek"},
+new int[] {android.R.id.text1, android.R.id.text2},
+SimpleCursorAdapter.IGNORE_ITEM_VIEW_TYPE);
 
 };
 
