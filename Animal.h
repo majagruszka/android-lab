@@ -14,7 +14,6 @@ private String kolor;
 private float wielkoœæ;
 private String opis;
 
-
 public Animal(){}
 
 public Animal(String gatunek, String kolor, float wielkosc, String opis){
